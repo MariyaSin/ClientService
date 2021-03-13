@@ -48,7 +48,8 @@ namespace ClientService
                         host.Password("serverClient");
                     });
                 });
-                mt.AddRequestClient<PostUserRequest>(new Uri("rabbitmq://localhost/server1"));
+                mt.AddRequestClient<PostUserRequest>(new Uri("rabbitmq://localhost/server1Post"));
+                mt.AddRequestClient<GetAllUsersRequest>(new Uri("rabbitmq://localhost/server1Get"));
             });
 
             services.AddMassTransitHostedService();
